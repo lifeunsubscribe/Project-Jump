@@ -7,8 +7,7 @@ public class player : MonoBehaviour
 {
     [SerializeField] private LayerMask platformLayerMask;
 
-    public float speed;
-
+    
     public float jumpPower;
 
     public GameObject platform;
@@ -18,9 +17,17 @@ public class player : MonoBehaviour
     private Rigidbody2D rigidbody2d;
     private BoxCollider2D boxCollider2d;
 
+    public float speed;
+
     private float i;
     private float pos;
-    Scene thisScene;
+    private float minPlatSpawnNeg = -1.5f;
+    private float minPlatSpawnPos = 1.5f;
+    private float maxPlatSpawnNeg = -3.0f;
+    private float maxPlatSpawnPos = 3.0f;
+
+    private Scene thisScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,9 +49,10 @@ public class player : MonoBehaviour
 
         transform.Translate(speed, 0f, 0f);
 
+
         if (Mathf.Floor(transform.position.x - i) == 7)
         {
-            GameObject newPlatform = Instantiate(platform, new Vector2(pos, Random.Range(-3.0f, 3.0f)), Quaternion.identity);
+            GameObject newPlatform = Instantiate(platform, new Vector2(pos, Random.Range(Random.Range(minPlatSpawnNeg, maxPlatSpawnNeg), Random.Range(minPlatSpawnPos, maxPlatSpawnPos))), Quaternion.identity);
             //Destroy(platform);
             //platform = newPlatform;
             pos = newPlatform.transform.position.x + 7;
