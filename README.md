@@ -4,3 +4,4 @@ Members:
 -Sarah Wadley 
 -Thomas Ankerholz
 -Laura Sarmiento
+To play the game: Install JumpRunner.apk in your Android device/emulator
