@@ -4,4 +4,4 @@ Members:
 -Sarah Wadley 
 -Thomas Ankerholz
 -Laura Sarmiento
-To play the game: Install JumpRunner.apk in your Android device/emulator
+To play the game: Inside Project Runner Final file, decompress all tar files and install JumpRunner.apk in your Android device/emulator
